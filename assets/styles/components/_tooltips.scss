@@ -1,0 +1,18 @@
+// MAKE SURE THE SIDE & TOP BUTTONS ARE CORRECT
+.tooltip {
+	font-family: $font-family-sans-serif-alt;
+	height: $navbar-height;	
+	line-height: $navbar-height;
+	padding: 0!important;
+    margin: 0!important;
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+
+.tooltip-inner {
+	padding: 0 8px;
+	border-radius: 0;
+    letter-spacing: 1px;
+    font-size: 10px;
+}

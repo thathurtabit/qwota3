@@ -1,0 +1,25 @@
+.wrap .main {
+	padding: 0;
+	margin: 0;
+
+	@include media-breakpoint-up(xs) {
+		padding: 0;
+		margin: 0;
+	}
+	@include media-breakpoint-up(sm) {
+		padding: 0;
+		margin: 0;
+	}
+	@include media-breakpoint-up(md) {
+		padding: 0;
+		margin: 0;
+	}
+	@include media-breakpoint-up(lg) {
+		padding: 0;
+		margin: 0;
+	}
+	@include media-breakpoint-up(xl) {
+		padding: 0;
+		margin: 0;
+	}
+}

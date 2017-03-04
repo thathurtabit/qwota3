@@ -1,0 +1,279 @@
+// Search form
+.search-form {
+  @extend .form-inline;
+}
+.search-form label {
+  font-weight: normal;
+  @extend .form-group;
+}
+.search-form .search-field,
+.comment-form [type=number],
+.comment-form select {
+  @extend .form-control;
+}
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+.comment-form [type=number], .comment-form input[type=email], .comment-form input[type=text], .comment-form input[type=url], .comment-form select, .comment-form textarea, .form-control, .search-form .search-field {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-family: $font-family-sans-serif-alt;
+    color: $white;
+    background-color: rgba(0,0,0,0);
+    background-image: none;
+    outline: none;
+    background-clip: padding-box;
+    border-color: transparent !important;
+    border-bottom: 2px solid lighten($brand-primary, 10%) !important;
+    border-radius: 0;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    // STYLE PLACEHOLDERS
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  color: $white;
+	  font-size: 1rem;
+	  text-align: left;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+	  color: $white;
+	  font-size: 1rem;
+	  text-align: left;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+	  color: $white;
+	  font-size: 1rem;
+	  text-align: left;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+	  color: $white;
+	  font-size: 1rem;
+	  text-align: left;
+	}
+
+    &:focus {
+    	background-color: rgba(0,0,0,0.25);
+    	border-color: transparent;
+    	border-bottom-color: $white;
+    	color: $white;
+    }
+
+    // WHEN IN ERROR
+    .has-error & {
+    	border-bottom-color: $red!important;
+    	background-color: rgba(0,0,0,0.25);
+    	border-top-color: transparent;
+    	border-left-color: transparent;
+    	border-right-color: transparent;
+    }
+}
+
+.comment-form select,
+.comment-form option {
+	background-color: $body-color;
+}
+
+
+.has-error {
+	position: relative;
+
+	.help-block {
+		font-family: $font-family-sans-serif-alt;
+		position: absolute;
+		font-size: 10px;
+		text-transform: uppercase;
+		opacity: 0.5;
+		bottom: 3px;
+    	left: 5px;
+	}
+}
+
+.quote-form-quote.has-error {
+	.help-block {
+		left: 20px;
+		bottom: -3px;
+	}
+}
+
+
+.form-allowed-tags {
+	position: absolute;
+	bottom: 0;
+	text-transform: uppercase;
+	font-size: 12px;
+	opacity: 0.75;
+	letter-spacing: 1px;
+	bottom: -20px;
+    left: 40px;
+}
+
+.quote-form-quote {
+	position: relative;
+	margin-bottom: 30px!important;
+	width: 100%;
+
+	&::before,
+	&::after {
+		content: "\201C";
+    	font-family: $font-family-serif;
+		font-size: 50px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		color: rgba(255,255,255,0.5);
+		line-height: 1;
+    	height: 40px;
+
+    	@include media-breakpoint-up(sm) {
+    		font-size: 100px;
+    		top: 40px;
+			left: 40px;
+    	}
+	}
+	&::after {
+		content: "\201D";
+		top: inherit;
+		left: inherit;
+		right: 20px;
+		bottom: 0;
+
+		@include media-breakpoint-up(sm) {
+			right: 40px;
+			bottom: 20px;
+		}
+	}
+}
+
+.comment-form {
+	position: relative;
+	max-width: 1400px;
+  	margin: 20px auto;
+  	padding: 20px;
+}
+
+
+
+// When in error, change label
+.comment-form p.has-error label {
+	color: $red;
+}
+
+
+.comment-form textarea {
+	height: 98%;
+    font-size: 30px;
+    line-height: 1.1;
+    text-align: center;
+    border-color: transparent;
+    padding: 50px;
+    font-family: $font-family-sans-serif;
+
+	// STYLE PLACEHOLDERS
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		text-align: center;
+		font-size: 30px;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		text-align: center;
+		font-size: 30px;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+		text-align: center;
+		font-size: 30px;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		text-align: center;
+		font-size: 30px;
+	}
+
+	// RESPONSIVE
+	@include media-breakpoint-up(sm) {
+		font-size: 40px;
+
+	    // STYLE PLACEHOLDERS
+	    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			font-size: 40px;
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+			font-size: 40px;
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+			font-size: 40px;
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+			font-size: 40px;
+		}
+
+	}
+
+    // RESPONSIVE
+	@include media-breakpoint-up(md) {
+		font-size: 50px;
+
+	    // STYLE PLACEHOLDERS
+	    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			font-size: 50px;
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+			font-size: 50px;
+		}
+		&:-ms-input-placeholder { /* IE 10+ */
+			font-size: 50px;
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+			font-size: 50px;
+		}
+
+	}
+}
+
+.comment-form .respond-right {
+	position: relative;
+	width: 100%;
+
+	p {				
+		// RESPONSIVE
+		@include media-breakpoint-up(sm) {
+			width: 50%;
+			float: left;
+		}
+	}
+
+	// Only apply on Odd p
+	p:nth-child(odd) {
+		// RESPONSIVE
+		@include media-breakpoint-up(sm) {
+			padding: 0 10px 0 0;
+		}
+	}
+
+
+}
+
+.comment-form label {
+	font-family: $font-family-sans-serif;
+	display: block;
+	text-transform:  uppercase;
+	font-size: 13px;
+    letter-spacing: 1px;
+    position: relative;
+    color: darken($body-bg, 25%);
+    margin-bottom: 3px;
+
+    &::before {
+    	content: "/";
+    	padding-right: 5px;
+    	color: $brand-primary;
+    	opacity: 0.5;
+    }    
+}
+
+.comment-form .form-submit {
+	position: absolute;
+    right: 30px;
+    bottom: -75px;
+}

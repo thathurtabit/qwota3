@@ -1,0 +1,136 @@
+.navbar,
+.nav-sorting {
+	position: fixed;
+	z-index: $zindex-navbar;
+	background: $navbar-color;
+}
+
+.nav-sorting {
+	left: 0;
+	top: $navbar-height;
+	width: 100%;
+
+	@include media-breakpoint-up(sm) {
+		left: 0;
+		top: $navbar-height;
+		bottom: 0; 
+		width: $navbar-height;
+	}
+}
+
+.navbar .nav .nav-link {
+	position: fixed;
+	right: 0;
+	top: 0;
+
+	@include media-breakpoint-up(sm) {
+		position: relative;
+		right: inherit;
+		top: inherit;
+	}
+
+}
+
+
+.site-description {
+    font-size: 14px;
+    position: fixed;
+    width: 200px;
+    margin-left: -100px;
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    height: $navbar-height;
+    line-height: $navbar-height;
+
+    span {
+    	color: $brand-primary;
+    }
+
+    // RESPONSIVE
+    @include media-breakpoint-up(sm) {
+	    margin-left: -150px;
+	    width: 300px;
+    	letter-spacing: 2px;
+    }
+}
+
+.navbar-brand {
+	width: $navbar-height;
+	height: $navbar-height;
+	margin: 0;
+	padding: 0;
+	background: $body-color url(../images/static.gif) 0 0;
+
+	&:hover {
+		background-position: 0 -100px;
+
+		#logo-q path {
+			fill: $body-bg;
+		}
+	}
+}
+
+#logo-q {
+	width: $navbar-height;
+	height: $navbar-height;
+	padding: 5px;
+
+	path {
+		fill: $brand-primary;
+	}
+}
+
+.filter-button-group {
+	flex-direction: row!important;
+	flex-wrap: wrap;
+
+	@include media-breakpoint-up(sm) {
+		flex-direction: column!important;
+	}
+}
+
+.nav-item {
+	flex: 0 0 $navbar-height;
+	@include media-breakpoint-up(sm) {
+		flex: 1;
+	}
+}
+
+
+
+.filter-button-group {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+// WHEN IS-CHECKED
+.filter-button-group .is-checked {
+	background: $brand-primary;
+	color: $white;
+}
+
+// FILTER BUTTONS
+.filter-button-group .nav-link {
+	@extend %btn;
+}
+
+.navbar-nav {
+	flex-direction: row;
+}
+
+.navbar {
+	height: $navbar-height;
+	padding: 0; 
+}
+
+.quote-count {
+	display: block;
+	margin-right: ($navbar-height + 20);
+
+	span {
+		color: $brand-primary;
+	}
+}

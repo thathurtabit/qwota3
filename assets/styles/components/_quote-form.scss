@@ -1,0 +1,61 @@
+#add-quote {
+  transition: opacity $transition-time ease-in-out, transform $transition-time ease-in-out;
+  transform: scale(1);
+  opacity: 0;
+  display: none; // Hide by default, use JS to bring it to the DOM
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $zindex-tooltip + 5;
+  background-color: $body-color;
+  overflow-y: auto;
+
+  // When OPEN
+  &.open {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.add-quote__inner {
+  color: $body-bg;
+}
+
+.add-quote__close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  line-height: 34px;
+}
+
+
+.comment-reply-title {
+  padding: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+  font-size: 10vw;
+  border-bottom: 1px solid $body-bg;
+  color: $brand-primary;
+  background: $body-color url("../images/quote-form-bg.jpg") no-repeat center;
+  background-blend-mode: saturation;
+  background-size: cover;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 20vw;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 15vw;
+  }
+}

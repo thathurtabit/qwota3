@@ -1,0 +1,46 @@
+.main-footer {
+	position: absolute;
+	//background: $navbar-color;
+	height: $navbar-height;
+	width: $navbar-height;
+	padding: 0;
+	
+
+	@include media-breakpoint-up(sm) {
+		position: fixed;
+		z-index: $zindex-navbar;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+
+
+
+.site-by,
+.navbar-nav.float-right .nav-link {
+	z-index: $zindex-navbar;
+	background: $brand-primary;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: $navbar-height;
+	height:  $navbar-height;
+	color: $white;
+
+	&:hover {
+		background: $white;
+		color: $brand-primary;
+
+		#horse {
+			fill: $brand-primary;
+		}
+	}
+}
+
+#horse {
+	width: $navbar-height;
+	height:  $navbar-height;
+	padding: 8px;
+	fill: $white;
+}

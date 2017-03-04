@@ -1,0 +1,306 @@
+#comments {
+  margin: 170px 0 0;
+  min-height: 100vh;
+  text-align: center;
+
+    @include media-breakpoint-up(xs) {
+      padding: 10px;
+    }
+    @include media-breakpoint-up(sm) {
+      margin: 50px 0 0 50px;
+      padding: 20px;
+      padding-right: 10px;
+      text-align: left;
+    }
+    @include media-breakpoint-up(md) {
+      padding: 30px;
+      padding-right: 10px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 30px;
+      padding-right: 10px;
+    }
+}
+
+.quote-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 300px;
+  text-align: left;
+
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+  }
+}
+
+// When there's no quotes
+.quote-list.no-quotes {
+  position: relative;
+  
+  &::before,
+  &::after {
+    content: "Scroll down to load more quotes";
+    background-color: $brand-primary;
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    color: $white;
+    top: 200px;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -50px;
+    z-index: $zindex-popover;
+    padding: 20px;
+    text-align: center;
+  }
+  &::before {
+    font-family: 'themify';
+    content: "\e68a";
+    z-index: $zindex-popover + 1;
+    background: transparent;
+    margin-top: -15px;
+    animation: scroll-down-anim $transition-time-loader alternate infinite ease-in-out;
+  }
+}
+
+
+@keyframes scroll-down-anim {
+  0% {
+    transform: translate3d(0, 0, 0);
+     
+  }
+  100% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+
+.quote {
+  padding: $quote-padding;
+  width: ($quote-width + 20); // Needs to match property in main.js
+}
+
+.quote-inner {
+  width: $quote-width; // Needs to match property in main.js
+  background: darken($white, 5%);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+
+}
+
+.quote-text {
+  background: $body-color;
+  color: $body-bg;
+}
+
+.quote-text blockquote {
+  font-size: 35px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 40px 0 10px;
+  position: relative;
+
+  &::before {
+    content: "\201C";
+    font-family: $font-family-serif;
+    font-size: 60px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    margin-left: -25px;
+    top: -8px;
+    color: $gray-light;
+  }
+}
+
+.quote-inner .slide-item {
+  padding: 20px;
+}
+
+
+.quote-info-inner cite,
+.quote-info-inner p,
+.quote-contributor {
+  font-family: $font-family-sans-serif-alt;
+  font-size: 10px;
+  font-style: normal;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 3px;
+  padding-top: 3px;
+  border-top: 1px dotted $border-color;
+
+  .data {
+    color: $body-color;
+  }
+
+  &.link a {
+    color: $brand-primary;
+  }
+
+  .title,
+  span {
+    color: lighten($body-color, 40%);
+  }
+
+  img {
+    border-radius: 100%;
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+  }
+}
+
+
+.cld-like-dislike-wrap {
+  margin-bottom: 0;
+}
+
+.cld-like-wrap {
+  position: relative;
+  font-size: 25px;
+}
+
+
+.cld-like-trigger {
+  transition: background-color $transition-time, color $transition-time;
+  color: $brand-primary!important;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-primary;
+    color: $body-bg!important;
+  }
+
+  .voted & {
+    background-color: darken($body-color, 5%);
+    color: rgba(255,255,255,0.25)!important;
+    cursor: not-allowed;
+  }
+}
+
+
+.cld-like-count-wrap {
+    margin-left: 5px;
+    font-size: 10px;
+    position: absolute;
+    top: -7px;
+    right: -1px;
+    width: 13px;
+    height: 13px;
+    background: darken($body-color, 30%);
+    border-radius: 100% 100% 100% 0;
+
+    .voted & {
+      animation: voted-anim 1.25s ease-in-out;
+
+    }
+            
+}
+
+@keyframes voted-anim {
+  0% {
+    background-color: darken($body-color, 30%);
+    transform: translateY(0);
+    color: $white;
+     
+  }
+  50% {
+    background-color: $white;
+    transform: translateY(-5px);
+    color: darken($body-color, 30%);  
+  }
+  100% {
+    background-color: darken($body-color, 30%);
+    transform: translateY(0);
+    color: $white;
+  }
+}
+
+.the-info {
+  position: relative;
+}
+
+.quote-category {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    color: $gray-light;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 2px 5px;
+    border: 1px solid $gray-light;
+}
+
+
+.quote-filter-info {
+  margin-left: $quote-padding;
+  margin-bottom: $quote-padding * 2;
+  display: inline-flex;
+  flex-direction: row;
+  background-color: $navbar-color;
+  text-transform: uppercase;
+}
+
+.quote-filter-info__col {
+
+  p,
+  .quote-filter-info__icon {
+    padding: 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  &.border {
+    border-left: 1px solid $border-color;
+  }
+
+}
+
+.quote-count__current,
+.quote-count__total {
+  color: $brand-primary;
+}
+
+
+.quote-filter-info__icon {
+  width: 36px;
+  color: $body-bg;
+  background-color: lighten($body-color, 45%);
+}
+
+.quote-filter-info__current {
+  color: $brand-primary;
+}
+
+.quote-moderation {
+  background-color: $brand-primary;
+  color: $body-bg;
+}
+
+.quote-moderation p {
+  padding: 5px 10px;
+  margin: 0;
+  text-align: center;
+}

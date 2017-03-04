@@ -1,0 +1,107 @@
+%btn,
+.btn {
+	border: 0;
+	outline: none;
+	text-transform: uppercase;
+	font-family: $font-family-sans-serif;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+
+.btn.btn-link.btn-text {
+	font-family: $font-family-sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-transform: none;
+	color: $brand-primary;
+	padding: 0 0 0 3px;
+	outline: 0;
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+// MAKE SURE THE SIDE & TOP BUTTONS ARE CORRECT
+.nav-link,
+.add-quote__open {
+	width: $navbar-height;
+	height: $navbar-height;
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	line-height: $navbar-height;
+	border-radius: 0;
+	background-color: transparent;
+
+	&:hover {
+		background-color: $white;
+		color: lighten($body-color, 5%);
+		cursor: pointer;
+	}
+}
+
+input[type=submit]#submit,
+.add-quote__close {
+	background-color: $body-bg;
+	color: $body-color;
+
+	&:hover {
+		background-color: $brand-primary;
+		color: $body-bg;
+	}
+}
+
+input[type=submit]#submit {
+	padding: 7px 20px;
+	font-size: 25px;
+}
+
+
+.add-quote__open {
+	background-color: $brand-primary;
+	color: $body-bg;
+
+	&:hover {
+		background-color: $body-color;
+		color: $brand-primary;
+	}
+}
+
+
+.add-quote__open--lg {
+	@extend .add-quote__open;
+	width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    line-height: 75px;
+    font-size: 25px;
+    position: fixed;
+	bottom: $navbar-height / 2;
+	right: $navbar-height / 2;
+	z-index: $zindex-tooltip;
+}
+
+
+
+// Add extra line-height
+.nav-link {
+	line-height: $navbar-height + 5;
+}
+
+// Top Navbar Buttons
+.navbar .nav .nav-link {
+	text-align: center;
+	padding: 0;
+	line-height: $navbar-height;
+	background-color: $body-bg;
+	color: $body-color;
+
+	&:hover {
+		background-color: $body-color;
+		color: $body-bg;
+	}
+}

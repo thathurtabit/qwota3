@@ -1,0 +1,40 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6",
+    "isotope": "^3.0.2",
+    "jquery-bridget": "^2.0.1",
+    "jquery-form-validator": "^2.3.54",
+    "jquery-ui": "^1.12.1",
+    "jquery-infinite-scroll": "^2.1.0"
+  },
+  "overrides": {
+    "isotope": {
+      "main": [
+        "js/item.js",
+        "js/layout-mode.js",
+        "js/isotope.js",
+        "js/layout-modes/vertical.js",
+        "js/layout-modes/fit-rows.js",
+        "js/layout-modes/masonry.js"
+      ]
+    },
+    "outlayer": {
+      "main": [
+        "item.js",
+        "outlayer.js"
+      ]
+    },
+    "flickity": {
+      "main": [
+        "./dist/flickity.pkgd.js"
+      ]
+    }
+  }
+}

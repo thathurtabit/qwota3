@@ -1,0 +1,170 @@
+
+#loading-cover {
+	background: $brand-primary;
+	position: fixed;
+	top: 0;
+	right: 0;
+    left: 0;
+	height: 100vh;
+	width: 100vw;
+	color: $body-color;
+	line-height: 100vh;
+	text-align: center;
+	z-index: $zindex-tooltip + 5;
+
+}
+
+.loading-inner {
+	transition: transform $transition-time ease-in-out, opacity $transition-time ease-in-out;
+	
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 50%;
+	top: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+	margin-bottom: 0;
+	animation: loading-slide-anim $transition-time ease-in-out;
+
+	// When the laoding screen is leaving
+	.hello-app & {
+		transform: translate3d(0, -20px, 0);
+		opacity: 0;
+	}
+}
+
+
+@keyframes loading-slide-anim {
+  0% {
+  	transform: translate3d(0, 20px, 0);
+  	opacity: 0;
+  }
+  100% {    
+    transform: translate3d(0, 0, 0);    
+    opacity: 1;
+  }
+}
+
+
+
+
+.logo-full {
+	background: url(../images/logo-full.svg) no-repeat center;
+	animation: loading-logo-anim 1s infinite alternate ease-in-out;
+	display: block;
+	width: 100px;
+	height: 100px;
+
+	&.loading {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 50px;
+		height: 50px;
+		margin-left: -25px;
+		margin-top: -25px;
+		padding: 10px;
+		border-radius: 100%;
+		z-index: $zindex-tooltip + 5;
+		background: $brand-primary url(../images/logo-q.svg) no-repeat center;
+	}
+}
+
+
+
+@keyframes loading-logo-anim {
+  0% {
+    transform: rotate(5deg) skew(0deg);
+     
+  }
+  100% {
+    transform: rotate(0deg) skew(-5deg);
+  }
+}
+
+
+.page-template .wrap {
+	margin: 80px;
+}
+
+.top-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.top-list li {
+	display: flex;
+	flex-direction: row;
+}
+
+
+.pager {
+	opacity: 0;
+	padding: 0;
+	text-align: center;
+}
+
+
+.scroll-msg {
+	position: fixed;
+	width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
+	color: $body-bg;
+	text-align: center;
+	z-index: $zindex-tooltip;
+
+	b {
+		width: 10px;
+    	height: 10px;
+    	display: block;
+		background: url(../images/logo-q.svg) no-repeat center;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		width: 50px;
+		height: 10px;
+		top: 50%;
+		left: 50%;
+		margin-top: -5px;
+		margin-left: -25px;
+		background: $brand-primary;
+		z-index: -1;
+	}
+
+	&::before {
+		animation: spin-loading 2s infinite ease-in-out;
+	}
+
+	&::after {
+		animation: spin-loading-rev 2s infinite ease-in-out;
+	}
+}
+
+@keyframes spin-loading {
+  0% {
+    transform: rotate(0deg);
+     
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-loading-rev {
+  0% {
+    transform: rotate(360deg);
+     
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
