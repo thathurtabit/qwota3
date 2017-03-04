@@ -3,8 +3,8 @@
 Qwota.co.uk is an experimental website that aims to bring together all the bestest quotes in popular culture.
 
 
-* Homepage: [http://qwota.co.uk](http://qwota.co.uk)
-* Twitter: [@rootswp](https://twitter.com/nonbeliever)
+* Homepage: [qwota.co.uk](http://qwota.co.uk)
+* Twitter: [@nonbeliever](https://twitter.com/nonbeliever)
 
 
 ## Based in a bunch of open-source goodness
