@@ -46,12 +46,12 @@
 
 input[type=submit]#submit,
 .add-quote__close {
-	background-color: $body-bg;
-	color: $body-color;
+	background-color: $brand-primary;
+	color: $body-bg;
 
 	&:hover {
-		background-color: $brand-primary;
-		color: $body-bg;
+		background-color: $body-bg;
+		color: $body-color;
 	}
 }
 
@@ -71,6 +71,16 @@ input[type=submit]#submit {
 	}
 }
 
+
+.btn--underline-none {
+	border-bottom: none;
+
+	&:hover,
+	&:visited {
+		text-decoration: none;
+		border-bottom: none; 
+	}
+}
 
 .add-quote__open--lg {
 	@extend .add-quote__open;

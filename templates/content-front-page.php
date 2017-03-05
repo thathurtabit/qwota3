@@ -18,17 +18,17 @@
 
 <button class="btn quote-form-open-close add-quote__open--lg" data-toggle="tooltip" data-placement="left" title="Add a Quote"><span class="sr-only">Add Quote</span> <span class="ti-plus"></span></button>
 
-<?php if (comments_open()) { ?>
-  
-  <section id="add-quote" class="">
-  	<button class="btn quote-form-open-close add-quote__close"><span class="sr-only">Close</span><span class="ti-close"></span></button>
-      <div class="add-quote__inner">
-      	<?php comment_form(); ?>
-      </div>
-  </section>
-  
-<?php } ?>
+<div class="row">
+  <?php if (comments_open()) { ?>
+    
+    <section id="add-quote" class="">
+    	<button class="btn quote-form-open-close add-quote__close"><span class="sr-only">Close</span><span class="ti-close"></span></button>
+        <div class="add-quote__inner">
+        	<?php comment_form(); ?>
+        </div>
+    </section>
+    
+  <?php } ?>
 
-
-
-<?php comments_template('/templates/comments.php'); ?>
+  <?php comments_template('/templates/comments.php'); ?>
+</div>

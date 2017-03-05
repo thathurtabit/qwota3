@@ -1,24 +1,22 @@
 #comments {
-  margin: 170px 0 0;
+  margin: 120px 0 0;
   min-height: 100vh;
   text-align: center;
+  width: 100%;
 
     @include media-breakpoint-up(xs) {
-      padding: 10px;
+      padding: 10px 0;
     }
     @include media-breakpoint-up(sm) {
-      margin: 50px 0 0 50px;
+      margin: 10px 0 0 50px;
       padding: 20px;
-      padding-right: 10px;
+      padding-right: 0;
       text-align: left;
     }
     @include media-breakpoint-up(md) {
+      margin: 0 0 0 50px;
       padding: 30px;
-      padding-right: 10px;
-    }
-    @include media-breakpoint-up(lg) {
-      padding: 30px;
-      padding-right: 10px;
+      padding-right: 0;
     }
 }
 
@@ -185,6 +183,7 @@
     color: $body-bg!important;
   }
 
+  &.cld-prevent,
   .voted & {
     background-color: darken($body-color, 5%);
     color: rgba(255,255,255,0.25)!important;

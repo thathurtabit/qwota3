@@ -23,3 +23,30 @@
 		margin: 0;
 	}
 }
+
+
+// Add header border
+article h1 {
+	position: relative;
+
+	margin-bottom: 20px;
+	
+	&::before {
+		content: "";
+		top: 0;
+		left: 0;
+		width: 10px;
+		border-top: 3px solid $border-color;
+		display: block;
+    	margin: 0 0 20px;
+	}
+}
+
+
+.p-intro {
+	font-size: 13px;
+	font-family: $font-family-sans-serif-alt;
+	padding: 2px 5px;
+	background: rgba(0,0,0,0.05);
+	display: inline-block;
+}

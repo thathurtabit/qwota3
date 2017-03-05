@@ -20,10 +20,12 @@
       init: function() {
         // JavaScript to be fired on all pages
 
-        // Enable BS tooltips
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip();
-        });
+        // Enable BS tooltips (if not touchscreen)
+        if(!('ontouchstart' in window)) {
+          $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+          });
+      }
 
         // Add class to body when items have loaded is ready
         $(window).load(function() {
@@ -70,13 +72,14 @@
           $(this).attr("disabled", true);
         });
         
-
+        // Get the URL
+        var myURL = window.location.href;
 
         // Typeahead - try to prevent people from inputting duplicate quotes
 
           // http://jsfiddle.net/ZGmyp/ - Taken from here
           var $comment = $( ".quote-enter" ).autocomplete({
-            source: "http://localhost/qwota-3/wp-content/themes/qwota3/lib/listcomments.php",
+            source: myURL + "wp-content/themes/qwota3/lib/listcomments.php",
             minLength: 4,
             select: function(event, ui) {
                 return false;
@@ -105,9 +108,7 @@
           if (curQuoteCount >= 1) {
             $('.quote-list').removeClass('no-quotes');
           }
-
-          console.log(curQuoteCount);
-          console.log("Arrange Complete.");        
+               
 
           // Update info
           $(".quote-count__current").text(curQuoteCount);
@@ -162,11 +163,11 @@
                   msgText: "Loading",
                   finishedMsg: "The End."
                 },
-                debug: true,
+                //debug: true,
                 state: {
                   currPage: currCommentPage
                 },
-                extraScrollPx: 200,
+                pixelsFromNavToBottom: 0,
                 pathParse: function(path,nextPage){
                      path = ['comment-page-','#comments'];
                      return path;
@@ -177,13 +178,7 @@
                 function myNewElements(newElements) {
                   $grid.isotope('appended', $(newElements));
 
-                  // WHEN DONE
-                  // $.when(myNewElements).done(function() {
-                  //   console.log("Items appended.");
-                  //   updateQuoteCount();
-                  // });
-
-
+                  
               });
                   
               

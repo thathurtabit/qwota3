@@ -6,13 +6,13 @@
 
 <div class="row">
                
-<article class="col-md-6">
+<article class="popular-quotes-section col-xl-8">
 
 
 	<h1>Popular Quotes</h1>
 
 
-	<p>These are the most popular quotes on Qwota:</p>
+	<p class="p-intro">These are the most popular quotes on Qwota:</p>
 
 
 	<ul class="top-list">
@@ -23,7 +23,7 @@
 			'post_id' => 9,
 			'status' => 'approve',
 			'meta_key' => 'cld_like_count',
-			'number' => '20',
+			'number' => '10',
 			'orderby' => 'cld_like_count',
 			'order' => 'DESC'
 		);
@@ -43,26 +43,34 @@
 		?>
 
 		
-		<li class="clearfix quote-<?php echo($i); ?>">
-	    	<div class="quote-number"><?php echo($i); ?>.</div>
-	    	<div class="quote-info-wrap">
-	        	<blockquote><?php echo $comment->comment_content; ?></blockquote>
-	            <cite>- <?php  echo get_comment_meta( $comment->comment_ID, 'quotee', true ); ?></cite>
-	            <div class="added-by">
-	                Added by:
-	                    <?php if ($comment->comment_author_url) { ?>
-	                    <a href="<?php echo $comment->comment_author_url; ?>" title="View <?php echo $comment->comment_author; ?>'s website" target="_blank"><?php echo $comment->comment_author; ?></a>
-	                    <?php } else { ?>
-	                        <?php echo $comment->comment_author; ?>
-	                    <?php } ?>
-	                | <a href="<?php  echo get_comment_meta( $comment->comment_ID, 'quote-link', true ); ?>" title="More infomation about the quote" target="_blank">More info &raquo;</a>
-	                </div>
-	                
-	                
+		<li class="top-list__quote-li quote-<?php echo($i); ?>">
+			<span class="top-list__quote-number"><?php echo($i); ?></span>
+			<div class="top-list__quote">
+		    	
+		    	<blockquote><?php echo $comment->comment_content; ?></blockquote>
+		        <cite>- <?php  echo get_comment_meta( $comment->comment_ID, 'quotee', true ); ?></cite>
+
+		        <div class="top-list__quote-info-wrap">
+
+		    		<span class="top-list__quote-votes">
+			        	<?php  echo get_comment_meta( $comment->comment_ID, 'cld_like_count', true ); ?> votes | 
+			        </span>
+		        	
+		            <span class="top-list__added-by">
+		                Added by:
+		                    <?php if ($comment->comment_author_url) { ?>
+		                    <a href="<?php echo $comment->comment_author_url; ?>" title="View <?php echo $comment->comment_author; ?>'s website" target="_blank"><?php echo $comment->comment_author; ?></a>
+		                    <?php } else { ?>
+		                        <?php echo $comment->comment_author; ?>
+		                    <?php } ?>
+		                | <a href="<?php  echo get_comment_meta( $comment->comment_ID, 'quote-link', true ); ?>" title="More infomation about the quote" target="_blank">More info &raquo;</a>
+		            </span>
+		                
+			        
+		        </div>
 	        </div>
-	        <div class="quote-votes">
-	        	<?php  echo get_comment_meta( $comment->comment_ID, 'cld_like_count', true ); ?> votes
-	        </div>
+	    	
+	        
 	    </li>
 
 
@@ -74,17 +82,32 @@
 
 	</ul>
 
+	<p class="back-to-quotes--inline hidden-xl-down">
+		<a href="<?php bloginfo('url'); ?>" class="btn--underline-none" title="View 'dem quotes">
+			<span class="ti-eye"></span> View more quotes! And maybe add your own. 
+		</a>
+	</p>
+
+
+	<div class="back-to-quotes">
+		<a href="<?php bloginfo('url'); ?>" class="btn--underline-none" title="View 'dem quotes">
+			<h3>Have an awesome quote to add?</h3>
+			<p>Head to the Quotes page and find the <span class="ti-plus"></span> button</p>
+		</a>
+	</div>
 
 </article>
 
 
-<article class="col-md-6">
+
+
+<article class="top-contrib-section col-xl-4">
 
 
 	<h1>Top Contributors</h1>
 
 
-	<p>These are the most quote-y people on Qwota:</p>
+	<p class="p-intro">These are the most quote-y people on Qwota:</p>
 
 
 	<ul class="top-list">
@@ -105,21 +128,17 @@
 		?>
 
 		
-		<li class="clearfix quote-<?php echo($i); ?>">
-        	<div class="contributor-number"><?php echo($i); ?>.</div>
-        	<div class="contributor-info-wrap">
-                
-                 <?php if ($contributor->comment_author_url) { ?>
-                 <div class="added-by">
-                    <a href="<?php echo $contributor->comment_author_url; ?>" title="View <?php echo $contributor->comment_author; ?>'s website" target="_blank"><strong><?php echo $contributor->comment_author; ?></strong> <span class="ti-world"></span></a>
-                    </div>
-                    <?php } else { ?>       
-                    	
-                    	<strong><?php echo $contributor->comment_author; ?></strong>
-
-                    <?php } ?>
-            </div>
-            
+		<li class="quote-<?php echo($i); ?>">
+        	<span class="top-list__quote-number"><?php echo($i); ?></span>
+             <?php if ($contributor->comment_author_url) { ?>
+             <span class="top-list__contributor">
+                <a href="<?php echo $contributor->comment_author_url; ?>" title="View <?php echo $contributor->comment_author; ?>'s website" target="_blank"><strong><?php echo $contributor->comment_author; ?></strong> <span class="ti-world"></span></a>
+                </span>
+                <?php } else { ?>       
+                <span class="top-list__contributor">
+                	<strong><?php echo $contributor->comment_author; ?></strong>
+                </span>
+                <?php } ?>            
         </li>
 
 
@@ -130,6 +149,12 @@
 		?>
 
 	</ul>
+
+	<p class="back-to-quotes--inline">
+		<a href="<?php bloginfo('url'); ?>" class="btn--underline-none" title="View 'dem quotes">
+			<span class="ti-eye"></span> View more quotes! And maybe add your own. 
+		</a>
+	</p>
 
 
 </article>

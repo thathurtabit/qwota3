@@ -1,0 +1,135 @@
+// 0 out the margin on these pages
+.popular-quotes.page-template .wrap {
+	margin: $navbar-height 0 0;
+}
+
+
+// Add padding to sections
+.popular-quotes-section,
+.top-contrib-section {
+	padding: 50px 20px;
+
+	@include media-breakpoint-up(sm) {
+		padding: 50px 40px;
+	}
+
+	@include media-breakpoint-up(md) {
+		padding: 50px 70px;
+	}
+}
+
+
+.popular-quotes-section {
+
+}
+
+.top-contrib-section {
+	background-color: $brand-primary;
+	color: $body-bg;
+}
+
+.top-contrib-section a {
+	color: $white;
+}
+
+
+
+.top-list {
+	list-style-type: none;
+	margin: 20px 0;
+	padding: 0;
+}
+
+
+.top-list li {
+	margin-bottom: 15px;
+}
+
+
+.top-list__contributor-number {
+
+}
+
+.top-list__quote-li {
+	display: flex;
+	flex-direction: row;
+}
+
+.top-list__quote-number {
+	flex: 0 0 30px;
+	width: 30px;
+	height: 30px;
+	text-align: center; 
+	line-height: 30px;
+	border-radius: 100%;
+	display: inline-block;
+	background: $body-color;
+	color: $body-bg;
+	margin-right: 20px;
+}
+
+.top-list__quote blockquote {
+	font-size: 30px;
+    position: relative;
+    line-height: 1;
+    margin: 0 0 2px 10px;
+    display: block;
+    text-transform: uppercase;
+
+	&::before {
+		content: "\201C";
+		font-family: $font-family-serif;
+		font-size: 60px;
+		color: darken($body-bg, 10%);
+		line-height: 60px;
+		height: 30px;
+		position: absolute;
+		top: -10px;
+		left: -20px;
+		z-index: -5;
+	}
+}
+
+.top-list__quote cite {
+	margin: 0 0 10px 10px;
+	display: block;
+	color: lighten($body-color, 30%);
+}
+
+
+.top-list__quote-info-wrap {
+	position: relative;
+	padding: 0 0 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	font-family: $font-family-sans-serif-alt;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: lighten($body-color, 30%);
+
+	&::after {
+		content: "";
+		border-bottom: 1px dotted $border-color;
+		width: 20px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+}
+
+.top-list__contributor {
+    font-size: 25px;
+    position: relative;
+    line-height: 1;
+    height: 30px;
+    display: inline-block;
+    top: 2px;
+
+	.ti-world {
+		font-size: 10px;
+		position: absolute;
+		right: -20px;
+		top: 10px;
+		color: darken($brand-primary, 10%);
+	}
+}

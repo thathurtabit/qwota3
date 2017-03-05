@@ -2,19 +2,16 @@
 
 
   
-// http://stackoverflow.com/questions/5306612/using-wpdb-in-standalone-script/9479868#comment22010629_9479868
+// $path = $_SERVER['DOCUMENT_ROOT'];
+// include_once $path . '/qwota-3/wp-config.php';
+// include_once $path . '/qwota-3/wp-load.php';
+// include_once $path . '/qwota-3/wp-includes/wp-db.php';
+// include_once $path . '/qwota-3/wp-includes/pluggable.php';
 
-$url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-$url = $_SERVER['REQUEST_URI'];
-$my_url = explode('wp-content' , $url); 
-$path = $_SERVER['DOCUMENT_ROOT']."/".$my_url[0];
 
-include_once $path . '/wp-config.php';
-include_once $path . '/wp-includes/wp-db.php';
-//include_once $path . '/wp-includes/pluggable.php';
 
-global $wpdb;
-
+// Get access to WordPress
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
 
 // http://www.pontikis.net/blog/jquery-ui-autocomplete-step-by-step
 // get what user typed in autocomplete input
