@@ -4,15 +4,25 @@
 }
 
 .page-header {
+	
 	background: $body-color;
 	color: $brand-primary;
 	padding: 30px;
 	width: 100%;
 
 	h1 {
+		transition: opacity $transition-time-loader ease-in-out, transform $transition-time-loader ease-in-out;
+		transform: translate3d(0,5px,0);
+		transition-delay: 0.7s;
+		opacity: 0;
 		font-size: 20vw;
 		text-transform: uppercase;
 		text-align: center;
+
+		.page-ready & {
+			opacity: 1;
+			transform: translate3d(0,0,0);
+		}
 	}
 }
 
@@ -26,6 +36,13 @@ h1, h2, h3, h4, h5 {
 	font-family: $font-family-sans-serif-alt;
 	font-size: 14px;
 	line-height: 1.75;
+	transition: opacity $transition-time-loader ease-in-out;
+	transform: translate3d(0,5px,0);
+	transition-delay: 0.5s;
+
+	.page-ready & {
+		opacity: 1;
+	}
 
 	& > p:first-of-type {
 		font-family: $font-family-sans-serif;
