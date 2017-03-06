@@ -20,6 +20,27 @@
     }
 }
 
+#comments::before {
+  @include media-breakpoint-up(lg) {
+    transition: transform $transition-time-loader ease-in-out;
+    transition-delay: 0.75s;
+    transform: translate3d(0,-100px,0);
+    content: "";
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    margin-left: -50px;
+    top: 0;
+    background: url(../images/logo-full-color.svg) no-repeat;
+    position: absolute;
+  }
+
+  .page-ready & {
+    transform: translate3d(0,0,0);
+  }
+}
+
+
 .quote-list {
   list-style-type: none;
   padding: 0;
@@ -84,7 +105,6 @@
   background: darken($white, 5%);
   overflow-wrap: break-word;
   word-wrap: break-word;
-
 }
 
 .quote-text {
