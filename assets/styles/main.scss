@@ -2,7 +2,25 @@
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/bootstrap/scss/_variables.scss";
+@import "../../bower_components/bootstrap/scss/_mixins.scss";
+@import "../../bower_components/bootstrap/scss/_normalize.scss";
+@import "../../bower_components/bootstrap/scss/_print.scss";
+@import "../../bower_components/bootstrap/scss/_reboot.scss";
+@import "../../bower_components/bootstrap/scss/_type.scss";
+@import "../../bower_components/bootstrap/scss/_images.scss";
+@import "../../bower_components/bootstrap/scss/_grid.scss";
+@import "../../bower_components/bootstrap/scss/_forms.scss";
+@import "../../bower_components/bootstrap/scss/_buttons.scss";
+@import "../../bower_components/bootstrap/scss/_button-group.scss";
+@import "../../bower_components/bootstrap/scss/_input-group.scss";
+@import "../../bower_components/bootstrap/scss/_custom-forms.scss";
+@import "../../bower_components/bootstrap/scss/_nav.scss";
+@import "../../bower_components/bootstrap/scss/_navbar.scss";
+@import "../../bower_components/bootstrap/scss/_list-group.scss";
+@import "../../bower_components/bootstrap/scss/_close.scss";
+@import "../../bower_components/bootstrap/scss/_tooltip.scss";
+@import "../../bower_components/bootstrap/scss/_utilities.scss";
 // endbower
 
 

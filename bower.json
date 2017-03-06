@@ -15,6 +15,31 @@
     "jquery-infinite-scroll": "^2.1.0"
   },
   "overrides": {
+    "bootstrap": {
+      "main": [
+        "scss/_variables.scss",
+        "scss/_mixins.scss",
+        "scss/_normalize.scss",
+        "scss/_print.scss",
+        "scss/_reboot.scss",
+        "scss/_type.scss",
+        "scss/_images.scss",
+        "scss/_grid.scss",
+        "scss/_forms.scss",
+        "scss/_buttons.scss",
+        "scss/_button-group.scss",
+        "scss/_input-group.scss",
+        "scss/_custom-forms.scss",
+        "scss/_nav.scss",
+        "scss/_navbar.scss",
+        "scss/_list-group.scss",
+        "scss/_close.scss",
+        "scss/_tooltip.scss",
+        "scss/_utilities.scss",
+        "js/dist/util.js",
+        "js/dist/tooltip.js"
+      ]
+    },    
     "isotope": {
       "main": [
         "js/item.js",
