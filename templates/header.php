@@ -44,7 +44,7 @@
       <li><a href="<?php bloginfo('url'); ?>/popular-quotes" data-toggle="tooltip" data-placement="right" title="Popular Quotes" class="nav-link"><span class="sr-only">Popular Quotes</span><span class="ti-crown"></span></a></li>   
     </ul>
 
-    <h2 class="site-description">The Bestest <span>Quotes</span> In Popular Culture</h2>
+    <h2 class="site-description"><span class="ribbon">The Bestest <span class="color">Quotes</span> In Popular Culture</span></h2>
 
   </nav>  
   <nav class="navbar-nav float-right">

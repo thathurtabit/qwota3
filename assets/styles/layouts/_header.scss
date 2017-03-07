@@ -44,7 +44,40 @@
     height: $navbar-height;
     line-height: $navbar-height;
 
-    span {
+    // RESPONSIVE
+    @include media-breakpoint-up(md) {
+	    &::before,
+	    &::after {
+	    	content: "";
+	    	color: $brand-primary;
+	    	position: absolute;
+	    	width: 4px;
+	    	height: 4px;
+	    	top: 50%;
+	    	
+			background: rgba(255,255,255,0.7);
+			border: 10px solid transparent;
+	    }
+
+	    &::before {
+	    	border-left-color: $navbar-color;
+	    	left: 0;
+	    	margin-top: -5px;
+	    }
+
+	    &::after {
+	    	border-right-color: $navbar-color;
+	    	right: 0;
+	    	margin-top: -5px;
+	    }
+	}
+
+    .ribbon {
+    	padding: 5px 8px; 
+    	background: rgba(255,255,255,0.75);
+    }
+
+    .color {
     	color: $brand-primary;
     }
 
