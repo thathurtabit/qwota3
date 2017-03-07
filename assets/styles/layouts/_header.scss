@@ -23,6 +23,11 @@
 	right: 0;
 	top: 0;
 
+
+	.page-ready & {
+		opacity: 1;
+	}
+
 	@include media-breakpoint-up(sm) {
 		position: relative;
 		right: inherit;
@@ -126,8 +131,38 @@
 
 .nav-item {
 	flex: 0 0 $navbar-height;
+	transition: opacity $transition-time ease-in-out;
+	opacity: 0;
+
+	@for $i from 1 through 8 {
+	    &:nth-child(#{$i}) {
+	    	transition-delay: #{$i / 8}s;
+
+	    	.page-ready & {
+	    		opacity: 1;
+	    	}
+	    }
+	}
+
 	@include media-breakpoint-up(sm) {
 		flex: 1;
+	}
+
+	@include media-breakpoint-up(md) {
+		transition: transform $transition-time ease-in-out;
+		transform: translate3d(-$navbar-height, 0, 0);
+
+		@for $i from 1 through 8 {
+		    &:nth-child(#{$i}) {
+		    	transition-delay: #{$i / 8}s;
+				
+		    	.page-ready & {
+		    		transform: translate3d(0, 0, 0);
+		    	}
+		    }
+		}
+
+
 	}
 }
 
