@@ -132,7 +132,7 @@
                   msgText: "Loading",
                   finishedMsg: "The End."
                 },
-                debug: true,
+                //debug: true,
                 state: {
                   currPage: currCommentPage
                 },
@@ -154,8 +154,6 @@
               
 
           } // end runInfiniteScroll
-
-
 
 
         // LOAD WEB FONTS
