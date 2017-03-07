@@ -11,7 +11,6 @@
   <link rel="icon" type="image/png" href="<?php bloginfo('template_url');?>/dist/images/favicon-16x16.png" sizes="16x16">
   <link rel="manifest" href="<?php bloginfo('template_url');?>/dist/images/manifest.json">
   <link rel="mask-icon" href="<?php bloginfo('template_url');?>/dist/images/safari-pinned-tab.svg" color="#22b154">
-  <meta name="theme-color" content="#22b154">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pathway+Gothic+One" rel="stylesheet">
+  <meta name="theme-color" content="#22b154">  
   <?php wp_head(); ?>
 </head>

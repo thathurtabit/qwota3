@@ -12,7 +12,8 @@
     "jquery-bridget": "^2.0.1",
     "jquery-form-validator": "^2.3.54",
     "jquery-ui": "^1.12.1",
-    "jquery-infinite-scroll": "^2.1.0"
+    "jquery-infinite-scroll": "^2.1.0",
+    "webfontloader": "^1.6.27"
   },
   "overrides": {
     "bootstrap": {
@@ -39,7 +40,7 @@
         "js/dist/util.js",
         "js/dist/tooltip.js"
       ]
-    },    
+    },
     "isotope": {
       "main": [
         "js/item.js",

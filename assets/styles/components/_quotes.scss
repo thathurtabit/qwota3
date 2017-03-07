@@ -98,6 +98,7 @@
 .quote {
   padding: $quote-padding;
   width: ($quote-width + 20); // Needs to match property in main.js
+  display: block;
 }
 
 .quote-inner {
