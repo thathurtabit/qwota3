@@ -63,7 +63,9 @@
 		                    <?php } else { ?>
 		                        <?php echo $comment->comment_author; ?>
 		                    <?php } ?>
+		                    <?php if(get_comment_meta( $comment->comment_ID, 'quote-link', true )) { ?>
 		                | <a href="<?php  echo get_comment_meta( $comment->comment_ID, 'quote-link', true ); ?>" title="More infomation about the quote" target="_blank">More info &raquo;</a>
+		                <? } ?>
 		            </span>
 		                
 			        

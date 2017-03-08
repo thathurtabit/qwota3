@@ -51,27 +51,28 @@ unset($file, $filepath);
       
       'quotee' =>
       '<p class="form-quote-quotee">' .
-      '<label for="quotee">' . __( 'Who said it?' ) . '</label> ' .
+      '<label for="quotee">' . __( 'Who said it?' ) . '<span class="caveat">*</span></label> ' .
       '<input id="quotee" class="validate" data-validation="required" data-validation-length="max30" name="quotee" type="text"  value="' . esc_attr( $commenter['quotee'] ) . $aria_req . '" required></p>',
       
       'quote-from' =>
       '<p class="form-quote-from">' .
-      '<label for="quote-from">' . __( 'Where is it taken from?' ) . '</label> ' .
+      '<label for="quote-from">' . __( 'Where is it taken from?' ) . '<span class="caveat">*</span></label> ' .
       '<input id="quote-from" class="validate" name="quote-from" data-validation-length="max30" data-validation="required" type="text" value="' . esc_attr( $commenter['quote-from'] ) . $aria_req . '" required></p>',
       
       'quote-when' =>
       '<p class="form-quote-when">' .
-      '<label for="quote-when">' . __( 'What year was it said? (approx.)' ) . '</label> ' .
+      '<label for="quote-when">' . __( 'What year was it said? (approx.)' ) . '<span class="caveat">*</span></label> ' .
       '<input id="quote-when" class="validate" data-validation="required number" data-validation-allowing="range[-5000;2050],negative" name="quote-when" type="number" max="'. date("Y") .'" min="-5000" value="' . esc_attr( $commenter['quote-when'] ) . '" size="4" ' . $aria_req . '" required></p>',
       
+
       'quote-link' =>
       '<p class="form-quote-link">' .
-      '<label for="quote-link">' . __( 'A nice link about the quote' ) . '</label> ' .
-      '<input id="quote-link" class="validate" data-validation-length="max40" data-validation="required url" name="quote-link" type="url" value="' . esc_attr( $commenter['quote-link'] ) . '" placeholder="http://" ' . $aria_req . ' required></p>',
-      
+      '<label for="quote-link">' . __( 'Got a nice link about the quote?' ) . '</label> ' .
+      '<input id="quote-link" data-validation="url" data-validation-optional="true" name="quote-link" type="url" value="' . esc_attr( $commenter['quote-link'] ) . '" placeholder="http://" ' . $aria_req . ' required></p>',
+
       'quote-category' =>
       '<p class="form-quote-category">' .
-      '<label for="quote-category">' . __( 'Select quote category' ) . '</label> ' .
+      '<label for="quote-category">' . __( 'Select quote category' ) . '<span class="caveat">*</span></label> ' .
       ( $req ? '<span class="required">*</span>' : '' ) .
         '<select name="quote-category" id="quote-category" data-validation="required" class="validate">
             <option value="">-- Please select</option>
@@ -86,25 +87,26 @@ unset($file, $filepath);
             <option value ="sports">Sports</option>
             <option value ="tv">TV</option>         
         </select></p>',
-        
+
+
       'author' =>
         '<p class="form-quote-author">' .
-        '<label for="author">' . __( 'Your name' ) . '</label> ' .
+        '<label for="author">' . __( 'Your name' ) . '<span class="caveat">*</span></label> ' .
         ( $req ? '<span class="required">*</span>' : '' ) .
         '<input id="author" class="validate" data-validation="required" data-validation-length="max50" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . $aria_req . '" required>' .
         '</p>',
         
       'email' =>
         '<p class="form-quote-email">' .
-        '<label for="email">' . __( 'Your email' ) . '</label> ' .
+        '<label for="email">' . __( 'Your email' ) . '<span class="caveat">*</span></label> ' .
         ( $req ? '<span class="required">*</span>' : '' ) .
         '<input id="email" class="validate" data-validation="required email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . $aria_req . '" required>' .
         '</p>',
         
       'url' =>
         '<p class="form-quote-url">' .
-        '<label for="url">' . __( 'Your website' ) . '</label>' .
-        '<input id="url" name="url" data-validation="url" type="url" data-validation-length="max40" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="http://" >' .
+        '<label for="url">' . __( 'Your website?' ) . '</label>' .
+        '<input id="url" name="url" data-validation="url" data-validation-optional="true" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="http://" >' .
         '</p>',
         
       'wrap-end' =>

@@ -143,6 +143,11 @@
 }
 
 
+.quote-contributor {
+  margin-top: 15px!important;
+  padding-top: 5px!important;
+}
+
 .quote-info-inner cite,
 .quote-info-inner p,
 .quote-contributor {
@@ -153,6 +158,7 @@
   display: block;
   margin-top: 3px;
   padding-top: 3px;
+  margin-bottom: 0;
   border-top: 1px dotted $border-color;
 
   .data {
