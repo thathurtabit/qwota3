@@ -134,7 +134,7 @@
 	transition: opacity $transition-time-loader ease-in-out;
 	opacity: 0;
 
-	@for $i from 1 through 8 {
+	@for $i from 1 through 11 {
 	    &:nth-child(#{$i}) {
 	    	transition-delay: #{$i / 7}s;
 
@@ -152,7 +152,7 @@
 		transition: transform $transition-time-loader ease-in-out;
 		transform: translate3d(-$navbar-height, 0, 0);
 
-		@for $i from 1 through 8 {
+		@for $i from 1 through 11 {
 		    &:nth-child(#{$i}) {
 		    	transition-delay: #{$i / 7}s;
 				
