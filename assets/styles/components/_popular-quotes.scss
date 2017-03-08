@@ -7,7 +7,7 @@
 // Add padding to sections
 .popular-quotes-section,
 .top-contrib-section {
-	padding: 50px 20px;
+	padding: 50px 30px;
 
 	@include media-breakpoint-up(sm) {
 		padding: 50px 40px;
@@ -65,11 +65,16 @@
 	display: inline-block;
 	background: $body-color;
 	color: $body-bg;
-	margin-right: 20px;
+
+	@include media-breakpoint-up(sm) {
+		margin-right: 20px;
+	}
+
+	
 }
 
 .top-list__quote blockquote {
-	font-size: 30px;
+	font-size: 25px;
     position: relative;
     line-height: 1;
     margin: 0 0 2px 10px;
@@ -87,6 +92,10 @@
 		top: -10px;
 		left: -20px;
 		z-index: -5;
+	}
+
+	@include media-breakpoint-up(sm) {
+		font-size: 30px;
 	}
 }
 

@@ -54,7 +54,7 @@
       <div class="quote-count hidden-md-down">Qwota has <span class="quote-count__total"><?php $comments_count = wp_count_comments(); echo  $comments_count->approved; ?></span> quotes so far. <button class="btn btn-link quote-form-open-close btn-text">Add more?</button></div>
     <?php } ?>
     <ul class="nav">
-      <li><a href="<?php bloginfo('url'); ?>/about-qwota" data-toggle="tooltip" data-placement="left" title="About Qwota"  class="nav-link hidden-sm-down"><span class="sr-only">About Qwota</span><span class="ti-info"></span></a></li>
+      <li><a href="<?php bloginfo('url'); ?>/about-qwota" data-toggle="tooltip" data-placement="left" title="About Qwota"  class="nav-link hidden-sm-down"><span class="sr-only">About Qwota</span><span class="ti-help"></span></a></li>
     </ul>
   </nav>
 </nav>

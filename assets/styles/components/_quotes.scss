@@ -106,6 +106,8 @@
   background: darken($white, 5%);
   overflow-wrap: break-word;
   word-wrap: break-word;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .quote-text {
