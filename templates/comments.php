@@ -27,8 +27,7 @@ if (post_password_required()) {
        * to use qwota_comment() to format the comments.
        */
       //wp_list_comments( array( 'callback' => 'qwota_comment' ) ); - working, but without reverse order
-      //wp_list_comments( array( 'callback' => 'qwota_comment' ) )
-      wp_list_comments()
+      wp_list_comments( array( 'callback' => 'qwota_comment' ) )
       
     ?>
     </ul>
